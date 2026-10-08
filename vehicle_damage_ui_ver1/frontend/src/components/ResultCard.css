@@ -1,0 +1,273 @@
+/* ════ ResultCard Styles ════ */
+
+.result-card {
+  border-radius: 20px;
+  border: 1px solid rgba(0,245,255,0.15);
+  background: rgba(5,5,16,0.9);
+  overflow: hidden;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.result-card.result-damaged {
+  border-color: rgba(255, 107, 53, 0.3);
+  box-shadow: 0 0 30px rgba(255, 107, 53, 0.08);
+}
+
+.result-card.result-clean {
+  border-color: rgba(57, 255, 20, 0.3);
+  box-shadow: 0 0 30px rgba(57, 255, 20, 0.08);
+}
+
+/* ── Header ── */
+.result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 28px;
+  background: rgba(0,0,0,0.4);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.result-status {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.status-emoji { font-size: 2.5rem; }
+
+.status-label {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.status-severity {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  margin-top: 4px;
+  opacity: 0.7;
+}
+
+.result-record { text-align: right; }
+.record-label {
+  display: block;
+  font-size: 0.65rem;
+  color: rgba(200,200,255,0.35);
+  font-family: 'Space Mono', monospace;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.record-id {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  color: rgba(0,245,255,0.5);
+}
+
+/* ── Vehicle Info ── */
+.result-vehicle-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 16px 28px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+/* ── Detection Stats ── */
+.detection-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.det-stat {
+  padding: 20px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.04);
+}
+
+.det-stat:last-child { border-right: none; }
+
+.det-stat-value {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1;
+  text-shadow: 0 0 15px currentColor;
+  margin-bottom: 6px;
+}
+
+.det-stat-label {
+  font-size: 0.72rem;
+  color: rgba(200,200,255,0.4);
+  font-family: 'Space Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── Damage Types ── */
+.damage-types-section {
+  padding: 20px 28px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.section-mini-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(200,200,255,0.4);
+  margin-bottom: 12px;
+}
+
+.damage-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.damage-tag {
+  font-size: 0.8rem;
+  padding: 6px 14px;
+}
+
+/* ── Image Section ── */
+.result-image-section {
+  padding: 20px 28px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.result-image-container {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.result-image {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  color: #00f5ff;
+  font-weight: 600;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+.result-image-container:hover .image-overlay { opacity: 1; }
+.result-image-container:hover .result-image { transform: scale(1.02); }
+
+/* ── Cost Section ── */
+.cost-section {
+  padding: 20px 28px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.cost-box {
+  background: rgba(0,245,255,0.03);
+  border: 1px solid rgba(0,245,255,0.12);
+  border-radius: 12px;
+  padding: 20px 22px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cost-box::before {
+  content: '₹';
+  position: absolute;
+  top: -10px;
+  right: 16px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 5rem;
+  color: rgba(0,245,255,0.04);
+  font-weight: 900;
+}
+
+.cost-content { position: relative; z-index: 1; }
+
+.cost-main {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #00f5ff;
+  margin-bottom: 10px;
+}
+
+.cost-detail {
+  font-size: 0.88rem;
+  color: rgba(200,200,255,0.65);
+  line-height: 1.7;
+  margin-bottom: 4px;
+}
+
+/* ── Footer ── */
+.result-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 28px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.result-timestamp {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  color: rgba(200,200,255,0.35);
+}
+
+.result-actions { display: flex; gap: 10px; }
+
+/* ── Fullscreen Modal ── */
+.fullscreen-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0,0,0,0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.25s ease;
+}
+
+.fullscreen-inner {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.fullscreen-inner img {
+  max-width: 100%;
+  max-height: 85vh;
+  border-radius: 12px;
+  border: 1px solid rgba(0,245,255,0.25);
+}
+
+.fullscreen-close {
+  position: absolute;
+  top: -48px;
+  right: 0;
+  background: rgba(255,107,53,0.15);
+  border: 1px solid rgba(255,107,53,0.4);
+  color: #ff6b35;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
